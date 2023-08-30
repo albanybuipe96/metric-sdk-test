@@ -56,6 +56,7 @@ class HomeFragment: Fragment() {
                         Reason.VERIFICATION_FAILED -> "VERIFICATION_FAILED"
                         Reason.UNAUTHORISED -> "UNAUTHORISED"
                         Reason.UNKNOWN -> "UNKNOWN"
+                        Reason.CONFIGURATION_ERROR -> "CONFIGURATION_ERROR"
                     }
                     Log.e("TAG", "verification failed $resultText")
                 }
