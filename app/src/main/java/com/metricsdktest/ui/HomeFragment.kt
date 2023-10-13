@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.NavController
@@ -47,6 +48,7 @@ class HomeFragment: Fragment() {
         super.onCreate(savedInstanceState)
         setFragmentResultListener(MetricLauncherContract.requestKey) { requestKey, bundle ->
             val outcome = bundle.getParcelable<VerificationOutcome>(MetricLauncherContract.resultKey)
+
             when (outcome) {
                 is VerificationOutcome.Failed -> {
                     val resultText = when (outcome.reason) {
@@ -113,6 +115,9 @@ fun Home(
                 onValueChange = { str ->
                     token = str
                 },
+                placeholder = {
+                    Text(text = "Enter token")
+                }
             )
             Spacer(modifier = Modifier.height(16.dp))
             Button(

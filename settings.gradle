@@ -14,8 +14,8 @@ dependencyResolutionManagement {
             url "http://android.metric.africa:8081/artifactory/metric-sdk-sdk"
             allowInsecureProtocol = true
             credentials {
-                username = artifactoryConsumerUser
-                password = artifactoryConsumerPassword
+                username = 'hubtel'
+                password = 'H@ubte1l662'
             }
         }
     }
